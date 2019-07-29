@@ -13,7 +13,8 @@ colorscheme badwolf " awesome colorscheme
 
 " Key mappings
 let mapleader = ","
-noremap <leader>z :Goyo<cr>
+nnoremap <silent><Leader>z :Goyo<CR>
+nmap <silent><Leader>/ gcc
 "autocmd VimEnter * :Goyo
 
 " plugin settings
