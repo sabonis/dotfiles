@@ -15,6 +15,7 @@ colorscheme badwolf " awesome colorscheme
 let mapleader = ","
 nnoremap <silent><Leader>z :Goyo<CR>
 nmap <silent><Leader>/ gcc
+vmap <silent><Leader>/ gc
 "autocmd VimEnter * :Goyo
 
 " plugin settings
