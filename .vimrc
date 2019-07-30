@@ -1,4 +1,5 @@
-" My settings
+" vim:foldmethod=marker:foldlevel=0
+" Basic Settings {{{
 syntax on
 filetype plugin on
 set autochdir
@@ -9,16 +10,17 @@ set smarttab
 set softtabstop=4	
 set number
 set hlsearch
+set modeline
 colorscheme badwolf " awesome colorscheme
-
-" Key mappings
+" }}}
+" Key Mappings {{{
 let mapleader = ","
 nnoremap <silent><Leader>z :Goyo<CR>
 nmap <silent><Leader>/ gcc
 vmap <silent><Leader>/ gc
 "autocmd VimEnter * :Goyo
-
-" plugin settings
+" }}}
+" Plugin Settings {{{
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
 let g:javascript_conceal_this                 = "@"
@@ -32,12 +34,11 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 set conceallevel=0
+" }}}
+" My plugins {{{
+packadd minpac
 
-function SetupPlugins()
-    " My plugins
-    packadd minpac
-
-    call minpac#init()
+call minpac#init()
 
     " minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
     "call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -48,7 +49,4 @@ function SetupPlugins()
     call minpac#add('sjl/badwolf')
     call minpac#add('tpope/vim-commentary')
     call minpac#add('ctrlpvim/ctrlp.vim')
-endfunction
-
-call SetupPlugins()
-
+" }}}
