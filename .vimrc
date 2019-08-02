@@ -1,17 +1,25 @@
 " vim:foldmethod=marker:foldlevel=0
 " Basic Settings {{{
-syntax on
-filetype plugin on
+syntax enable
+filetype plugin indent on
 set autochdir
 set autoindent	
-set shiftwidth=4
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 set smartindent
 set smarttab
-set softtabstop=4	
 set number
 set hlsearch
 set modeline
 colorscheme badwolf " awesome colorscheme
+
+" Maintain undo history between sessions
+set undofile
+set undodir=~/.vim/undodir
+
+" Fix backspace is not working
+set backspace=indent,eol,start
 " }}}
 " Key Mappings {{{
 let mapleader = ","
