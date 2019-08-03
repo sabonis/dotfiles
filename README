@@ -1,4 +1,3 @@
-```
  ____   ___ _____ _____ ___ _     _____ ____  
 |  _ \ / _ \_   _|  ___|_ _| |   | ____/ ___| 
 | | | | | | || | | |_   | || |   |  _| \___ \ 
@@ -11,4 +10,3 @@ DOTFILES
 
 INSTALLATION
     curl -fsSL https://raw.githubusercontent.com/sabonis/dotfiles/master/setup.sh | sh
-```
