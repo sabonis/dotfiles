@@ -12,7 +12,7 @@ ln -s $MAIN_PATH/.vimrc ~/.vimrc
 # see https://github.com/k-takata/minpac
 git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 # see https://superuser.com/questions/451863/how-to-run-vim-command-from-the-shell
-vim - +'call minpac#update()'
+echo Wait for vim plugins installing... | vim -R - +'call minpac#update()' 
 
 echo Installed 🍺
 
