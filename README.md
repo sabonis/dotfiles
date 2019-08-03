@@ -1,0 +1,14 @@
+```
+ ____   ___ _____ _____ ___ _     _____ ____  
+|  _ \ / _ \_   _|  ___|_ _| |   | ____/ ___| 
+| | | | | | || | | |_   | || |   |  _| \___ \ 
+| |_| | |_| || | |  _|  | || |___| |___ ___) |
+|____/ \___/ |_| |_|   |___|_____|_____|____/ 
+                                              
+
+DOTFILES
+    This is my personal dotfile settings.
+
+INSTALLATION
+    curl -fsSL https://raw.githubusercontent.com/sabonis/dotfiles/master/setup.sh | sh
+```
