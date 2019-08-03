@@ -12,7 +12,13 @@ set smarttab
 set number
 set hlsearch
 set modeline
-colorscheme badwolf " awesome colorscheme
+
+try
+  colorscheme badwolf " awesome colorscheme
+catch /^Vim\%((\a\+)\)\=:E185/
+  " deal with it
+  " endtry
+endtry
 
 " Maintain undo history between sessions
 set undofile
@@ -48,13 +54,13 @@ packadd minpac
 
 call minpac#init()
 
-    " minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
-    "call minpac#add('k-takata/minpac', {'type': 'opt'})
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+"call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-    " Add other plugins here.
-    call minpac#add('pangloss/vim-javascript')
-    call minpac#add('junegunn/goyo.vim')
-    call minpac#add('sjl/badwolf')
-    call minpac#add('tpope/vim-commentary')
-    call minpac#add('ctrlpvim/ctrlp.vim')
+" Add other plugins here.
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('junegunn/goyo.vim')
+call minpac#add('sjl/badwolf')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('ctrlpvim/ctrlp.vim')
 " }}}
