@@ -63,4 +63,10 @@ call minpac#add('junegunn/goyo.vim')
 call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('vim-airline/vim-airline')
+" }}}
+" Utility functions {{{
+function UpdatePlugin()
+  call minpac#update()
+endfunction
 " }}}
