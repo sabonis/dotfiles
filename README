@@ -6,7 +6,7 @@
                                               
 
 DOTFILES
-    This is my personal dotfile settings.
+        This is my personal dotfile settings.
 
 INSTALLATION
-    curl -fsSL https://raw.githubusercontent.com/sabonis/dotfiles/master/setup.sh | sh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/sabonis/dotfiles/master/setup.sh)"
