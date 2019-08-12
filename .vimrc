@@ -4,17 +4,20 @@ syntax enable
 filetype plugin indent on
 set autochdir
 set autoindent	
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smartindent
 set smarttab
 set number
 set hlsearch
 set modeline
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 
 try
   colorscheme badwolf " awesome colorscheme
+  "packadd! dracula
+  "colorscheme dracula
 catch /^Vim\%((\a\+)\)\=:E185/
   " deal with it
   " endtry
@@ -48,6 +51,16 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 set conceallevel=0
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 " }}}
 " My plugins {{{
 packadd minpac
@@ -64,6 +77,9 @@ call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('vim-airline/vim-airline')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('vim-syntastic/syntastic')
+call minpac#add('dracula/vim', {'name': 'dracula'})
 " }}}
 " Utility functions {{{
 function UpdatePlugin()
