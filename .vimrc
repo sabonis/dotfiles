@@ -15,7 +15,8 @@ set modeline
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 
 try
-  colorscheme badwolf " awesome colorscheme
+  colorscheme gruvbox
+  "colorscheme badwolf " awesome colorscheme
   "packadd! dracula
   "colorscheme dracula
 catch /^Vim\%((\a\+)\)\=:E185/
@@ -80,6 +81,7 @@ call minpac#add('vim-airline/vim-airline')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('vim-syntastic/syntastic')
 call minpac#add('dracula/vim', {'name': 'dracula'})
+call minpac#add('morhetz/gruvbox')
 " }}}
 " Utility functions {{{
 function UpdatePlugin()
