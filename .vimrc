@@ -16,6 +16,7 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 
 try
   colorscheme gruvbox
+  set background=dark  " Setting dark mode
   "colorscheme badwolf " awesome colorscheme
   "packadd! dracula
   "colorscheme dracula
@@ -62,6 +63,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+
+" vim-easy-align settings
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " }}}
 " My plugins {{{
 packadd minpac
@@ -82,6 +90,7 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('vim-syntastic/syntastic')
 call minpac#add('dracula/vim', {'name': 'dracula'})
 call minpac#add('morhetz/gruvbox')
+call minpac#add('junegunn/vim-easy-align')
 " }}}
 " Utility functions {{{
 function UpdatePlugin()
