@@ -14,17 +14,6 @@ set hlsearch
 set modeline
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
 
-try
-  colorscheme gruvbox
-  set background=dark  " Setting dark mode
-  "colorscheme badwolf " awesome colorscheme
-  "packadd! dracula
-  "colorscheme dracula
-catch /^Vim\%((\a\+)\)\=:E185/
-  " deal with it
-  " endtry
-endtry
-
 " Maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undodir
@@ -71,29 +60,75 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
+" // excerpt from https://github.com/junegunn/vim-plug#example
 " My plugins {{{
-packadd minpac
-
-call minpac#init()
-
-" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
-"call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-" Add other plugins here.
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('junegunn/goyo.vim')
-call minpac#add('sjl/badwolf')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('vim-syntastic/syntastic')
-call minpac#add('dracula/vim', {'name': 'dracula'})
-call minpac#add('morhetz/gruvbox')
-call minpac#add('junegunn/vim-easy-align')
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+"
+" Make sure you use single quotes
+"
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+"
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"
+" Using a non-master branch
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+"
+" Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+" When fzf is not installed by Homebrew
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+" Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+"
+Plug 'pangloss/vim-javascript'
+Plug 'junegunn/goyo.vim'
+Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-syntastic/syntastic'
+"
+" Initialize plugin system
+call plug#end()
 " }}}
 " Utility functions {{{
 function UpdatePlugin()
   call minpac#update()
 endfunction
 " }}}
+
+" Strange color issue, color setiing must put it in the end of .vimrc
+" see https://github.com/dracula/dracula-theme/issues/80#issuecomment-346719383
+try
+  " colorscheme gruvbox
+  " set background=dark  " Setting dark mode
+  "colorscheme badwolf " awesome colorscheme
+  colorscheme dracula
+catch /^Vim\%((\a\+)\)\=:E185/
+  " deal with it
+  " endtry
+endtry
+
