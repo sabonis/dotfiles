@@ -12,7 +12,7 @@ set smarttab
 set number
 set hlsearch
 set modeline
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2
+autocmd FileType javascript,typescript setlocal shiftwidth=2 softtabstop=2
 
 " Maintain undo history between sessions
 set undofile
@@ -59,9 +59,15 @@ xmap ga <Plug>(EasyAlign)
 "
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" make YCM compatible with UltiSnips (using supertab)
+" see https://github.com/SirVer/ultisnips/issues/512#issuecomment-111733631
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
 " }}}
-" // excerpt from https://github.com/junegunn/vim-plug#example
 " My plugins {{{
+" // excerpt from https://github.com/junegunn/vim-plug#example
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -81,17 +87,14 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-"
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'fatih/vim-go'
 "
 " Plugin options
 " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-"
-" Plugin outside ~/.vim/plugged with post-update hook
+
+" Plugin fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " When fzf is not installed by Homebrew
@@ -106,10 +109,9 @@ Plug 'sjl/badwolf'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tpope/vim-commentary'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-syntastic/syntastic'
+Plug 'prettier/vim-prettier'
 "
 " Initialize plugin system
 call plug#end()
@@ -123,10 +125,10 @@ endfunction
 " Strange color issue, color setiing must put it in the end of .vimrc
 " see https://github.com/dracula/dracula-theme/issues/80#issuecomment-346719383
 try
-  " colorscheme gruvbox
-  " set background=dark  " Setting dark mode
+  colorscheme gruvbox
+  set background=dark  " Setting dark mode
   "colorscheme badwolf " awesome colorscheme
-  colorscheme dracula
+  " colorscheme dracula
 catch /^Vim\%((\a\+)\)\=:E185/
   " deal with it
   " endtry
