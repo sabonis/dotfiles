@@ -112,6 +112,10 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'prettier/vim-prettier'
+" Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+
 "
 " Initialize plugin system
 call plug#end()

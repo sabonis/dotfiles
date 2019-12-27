@@ -1,18 +1,18 @@
 #! /usr/bin/env bash
 
 echo Installing...
-MAIN_PATH=$(pwd $(dirname $0))
+MAIN_PATH="$(pwd "$(dirname "$0")")"
 echo "MAIN_PATH = $MAIN_PATH"
 
-if [ ! -d $MAIN_PATH ]; then
-    git clone git@github.com:sabonis/dotfiles.git $MAIN_PATH
+if [ ! -d "$MAIN_PATH" ]; then
+	git clone git@github.com:sabonis/dotfiles.git "$MAIN_PATH"
 fi
 
 mkdir -p ~/.vim/undodir
-ln -sf $MAIN_PATH/.vimrc ~/.vimrc
+ln -sf "$MAIN_PATH/.vimrc" "$HOME/.vimrc"
 
 # Link tmux
-ln -sf "$MAIN_PATH/.tmux.conf.local" ~/.tmux.conf.local
+ln -sf "$MAIN_PATH/.tmux.conf.local" "$HOME/.tmux.conf.local"
 
 # Install minpac
 # see https://github.com/k-takata/minpac
@@ -21,4 +21,3 @@ ln -sf "$MAIN_PATH/.tmux.conf.local" ~/.tmux.conf.local
 # vim +"call minpac#update('', {'do': 'q'})"
 
 echo Installed 🍺
-
