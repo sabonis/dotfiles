@@ -24,10 +24,14 @@ set backspace=indent,eol,start
 " Key Mappings {{{
 let mapleader = ","
 nnoremap <silent><Leader>z :Goyo<CR>
+"autocmd VimEnter * :Goyo
 nmap <silent><Leader>/ gcc
 vmap <silent><Leader>/ gc
-"autocmd VimEnter * :Goyo
+
+" nerdtree mapping
+noremap <Leader>e :NERDTreeToggle<CR>
 " }}}
+
 " Plugin Settings {{{
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
@@ -64,6 +68,7 @@ nmap ga <Plug>(EasyAlign)
 " see https://github.com/SirVer/ultisnips/issues/512#issuecomment-111733631
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
 
 " }}}
 " My plugins {{{
@@ -115,6 +120,7 @@ Plug 'prettier/vim-prettier'
 " Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'preservim/nerdtree'
 
 "
 " Initialize plugin system
