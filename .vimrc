@@ -29,7 +29,10 @@ nmap <silent><Leader>/ gcc
 vmap <silent><Leader>/ gc
 
 " nerdtree mapping
-noremap <Leader>e :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
+
+" fzf mapping
+noremap <C-p> :FZF<CR>
 " }}}
 
 " Plugin Settings {{{
