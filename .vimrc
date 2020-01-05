@@ -33,6 +33,7 @@ noremap <C-n> :NERDTreeToggle<CR>
 
 " fzf mapping
 noremap <C-p> :FZF<CR>
+
 " }}}
 
 " Plugin Settings {{{
@@ -72,6 +73,14 @@ nmap ga <Plug>(EasyAlign)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
+" tsx in YCM
+" see https://github.com/ycm-core/YouCompleteMe/issues/1841
+autocmd BufEnter *.tsx set filetype=typescript
+
+" ale settings
+" use nice symbols for errors and warnings
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
 
 " }}}
 " My plugins {{{
@@ -95,7 +104,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'fatih/vim-go'
 "
