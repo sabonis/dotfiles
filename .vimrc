@@ -136,7 +136,7 @@ Plug 'dense-analysis/ale'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'preservim/nerdtree'
 Plug 'leafgarland/typescript-vim'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
 
 "
@@ -164,3 +164,8 @@ catch /^Vim\%((\a\+)\)\=:E185/
   " deal with it
   " endtry
 endtry
+
+"Mode Settings
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
