@@ -124,15 +124,20 @@ Plug 'pangloss/vim-javascript'
 Plug 'junegunn/goyo.vim'
 Plug 'sjl/badwolf'
 Plug 'morhetz/gruvbox'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'rakr/vim-one'
+Plug 'arzg/vim-colors-xcode'
+Plug 'junegunn/seoul256.vim'
 Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'prettier/vim-prettier'
 " Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'preservim/nerdtree'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vimwiki/vimwiki'
 
 "
 " Initialize plugin system
@@ -147,12 +152,15 @@ endfunction
 " Strange color issue, color setiing must put it in the end of .vimrc
 " see https://github.com/dracula/dracula-theme/issues/80#issuecomment-346719383
 try
-  colorscheme gruvbox
-  set background=dark  " Setting dark mode
+  colorscheme xcodelight
+  " colorscheme one
+  " set background=light  " Setting dark mode
+  " let g:airline_theme='one'
+  " let g:seoul256_background = 256
+  " colo seoul256
   "colorscheme badwolf " awesome colorscheme
   " colorscheme dracula
 catch /^Vim\%((\a\+)\)\=:E185/
   " deal with it
   " endtry
 endtry
-
